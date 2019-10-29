@@ -1,10 +1,14 @@
 <?php
 namespace SmartEmailing\v3\Request\Import;
 
+use JsonSerializable;
 use SmartEmailing\v3\Api;
 use SmartEmailing\v3\Request\AbstractRequest;
 
-class Import extends AbstractRequest implements \JsonSerializable
+/**
+ * Class Import
+ */
+class Import extends AbstractRequest implements JsonSerializable
 {
     /**
      * The maximum contacts per single request
@@ -22,6 +26,10 @@ class Import extends AbstractRequest implements \JsonSerializable
      */
     protected $contacts = [];
 
+	/**
+	 * Import constructor.
+	 * @param Api $api
+	 */
     public function __construct(Api $api)
     {
         parent::__construct($api);

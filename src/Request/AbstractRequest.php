@@ -1,6 +1,7 @@
 <?php
 namespace SmartEmailing\v3\Request;
 
+use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\RequestException as GuzzleRequestException;
 use Psr\Http\Message\ResponseInterface;
 use SmartEmailing\v3\Api;
@@ -52,13 +53,14 @@ abstract class AbstractRequest
      */
     abstract protected function options();
 
-    /**
-     * Sends the request and builds the response
-     *
-     * @return Response
-     * @throws RequestException
-     */
-    public function send()
+	/**
+	 * Sends the request and builds the response
+	 *
+	 * @throws RequestException
+	 * @throws GuzzleException
+	 * @return Response
+	 */
+	public function send()
     {
         try {
             // Send the request and handle the Guzzle exception

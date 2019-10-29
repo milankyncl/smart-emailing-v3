@@ -1,12 +1,19 @@
 <?php
-namespace SmartEmailing\v3\Request;
 
+namespace SmartEmailing\v3\Request;
 
 use Psr\Http\Message\ResponseInterface;
 use stdClass;
 
+/**
+ * Class Response
+ */
 class Response
 {
+
+	/**
+	 * @var string
+	 */
     const ERROR = 'error';
     const SUCCESS = 'ok';
     const CREATED = 'created';

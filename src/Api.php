@@ -14,6 +14,12 @@ use SmartEmailing\v3\Request\Ping\Ping;
  */
 class Api
 {
+
+	/**
+	 * @var Client
+	 */
+	private $client;
+
     /**
      * The final API endpoint
      * @var string
@@ -70,9 +76,11 @@ class Api
         return new Credentials($this);
     }
 
+	/**
+	 * @return CustomFields
+	 */
     public function customFields()
     {
         return new CustomFields($this);
     }
-
 }
